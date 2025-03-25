@@ -40,34 +40,23 @@ function checkWinner(){
         [2, 5, 8],
         [0, 4, 8],
         [2, 4, 6]
-    ]
-    for (const combi of winCobmo){
-        const [a, b, c] = combi;
-        if(cells[a] && cells[a] === cells[b] && cells[a] === cells[c]){
-            active = false;
-            statusText.innerText = `Player ${currentPlayer} has won!`;
-            return;
-        }
-    };
+    ];
 
     let winner = false;
-    winningConditions.forEach((winningCombo) => {
-        const a = winningCombo[0];
-        const b = winningCombo[1];
-        const c = winningCombo[2];
-
+    for (const combo of winningConditions) {
+        const [a, b, c] = combo; 
         if(cells[a] && cells[a] === cells[b] && cells[a] === cells[c]){
             winner = true;
             active = false;
             statusText.innerText = `Player ${currentPlayer} has won!`;
+            return;
         }
-    });
+    }
 
     if(!cells.includes('') && !winner){
         active = false;
         statusText.innerText = 'It\'s a tie!';
     }
-
 }
 
 function resetGame(){
