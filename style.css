@@ -1,1 +1,92 @@
-/* style file */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 2rem;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+#statusText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#reset {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 400px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    #statusText {
+        font-size: 1.2rem;
+    }
+}
